@@ -919,24 +919,26 @@ document.querySelectorAll(".platform-tag").forEach((button) => {
     if (selectedPlatform === "github-copilot") {
       const toneSelect = document.getElementById('toneSelect');
       const audienceSelect = document.getElementById('audienceSelect');
-      
       // Set tone to technical
       toneSelect.value = 'technical';
       localStorage.setItem('selected-tone', 'technical');
-      
       // Set audience to developers
       audienceSelect.value = 'developers';
       localStorage.setItem('audience', 'developers');
-      
       // Update dev mode class on body
       document.body.classList.add('dev-mode');
-      
       // Update chat button icons
       updateChatButtonIcons(true);
-      
-      // Trigger prompt filtering for dev mode
-      filterPrompts();
+    } else {
+      // For other platforms, set audience to 'everyone' and remove dev-mode class
+      const audienceSelect = document.getElementById('audienceSelect');
+      audienceSelect.value = 'everyone';
+      localStorage.setItem('audience', 'everyone');
+      document.body.classList.remove('dev-mode');
+      updateChatButtonIcons(false);
     }
+    // Always trigger prompt filtering when platform changes
+    filterPrompts();
   });
 });
 
