@@ -2241,3 +2241,12 @@ input:checked + .slider:before {
 .create-yaml-button:hover {
     background-color: #0e9f71;
 } 
+
+
+
+/* RTL */
+
+.rtl{
+direction: rtl ;
+text-align: right;
+}
