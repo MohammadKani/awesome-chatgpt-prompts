@@ -259,7 +259,7 @@ function updatePromptCount(filteredCount, totalCount) {
 
   if (filteredCount === totalCount) {
     promptCount.classList.remove("filtered");
-    countLabel.textContent = "All Prompts";
+    countLabel.textContent = "همه دستورات";
     countNumber.textContent = totalCount;
   } else {
     promptCount.classList.add("filtered");

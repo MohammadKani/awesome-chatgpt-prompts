@@ -435,7 +435,7 @@ body.dark-mode {
 }
 
 .site-title::before {
-    content: '';
+    /* content: ''; */
     position: absolute;
     width: 100%;
     height: 100%;
