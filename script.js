@@ -1077,7 +1077,7 @@ function openEmbedDesigner() {
     }
     
     // Build the embed URL
-    const embedUrl = `/embed/?prompt=${encodeURIComponent(content)}&context=https://prompts.chat&model=gpt-4o&agentMode=chat&thinking=false&max=false&height=400`;
+    const embedUrl = `/embed/?prompt=${encodeURIComponent(content)}&context=https://prompts.ir&model=gpt-4o&agentMode=chat&thinking=false&max=false&height=400`;
     
     // Open in new tab
     window.open(embedUrl, '_blank');

@@ -1,5 +1,5 @@
 <p align="center">
-<img width="395" alt="prompts.chat" src="https://github.com/user-attachments/assets/e0d0e32d-d2ce-4459-9f37-e951d9f4f5de" />
+<img width="395" alt="prompts.ir" src="https://github.com/user-attachments/assets/e0d0e32d-d2ce-4459-9f37-e951d9f4f5de" />
 </p>
 
 <h3 align="center">Sponsors</h3>
@@ -48,7 +48,7 @@ To get started, simply clone this repository and use the prompts in the README.m
 
 We hope you find these prompts useful and have fun exploring AI chat models!
 
-**[View on prompts.chat](https://prompts.chat)**
+**[View on prompts.ir](https://prompts.ir)**
 
 **[View on Hugging Face](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts/)**
 ---
@@ -83,9 +83,9 @@ Images from Text"**.
 
 ---
 
-### Using prompts.chat
+### Using prompts.ir
 
-[prompts.chat](https://prompts.chat) is designed to provide an enhanced UX when
+[prompts.ir](https://prompts.ir) is designed to provide an enhanced UX when
 working with prompts. With just a few clicks, you can easily edit and copy the
 prompts on the site to fit your specific needs and preferences.
 
