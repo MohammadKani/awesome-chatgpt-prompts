@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="page-mode" content="{{ page.mode | default: 'designer' }}">
-    <title>prompts.ir/embed — پرامپت‌های هوش مصنوعی عالی</title>
+    <title>پرامپت‌های هوش مصنوعی — prompts.ir/embed</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,7 +26,7 @@
     </script>
     <link rel="stylesheet" href="{{ '/embed-style.css' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
-    <meta name="description" content="Design and customize embeddable AI prompts">
+    <meta name="description" content="طراحی و سفارشی‌سازی پرامپت‌های قابل درج هوش مصنوعی">
     <style>
         .checkerboard-bg {
             background-image: 
@@ -52,78 +52,78 @@
 </head>
 <body class="bg-dynamic-background text-dynamic-foreground overflow-hidden checkerboard-bg">
     <!-- Site Header -->
-    <header class="site-header">
-        <div class="header-left">
-            <h1 class="site-title">prompts.ir/embed</h1>
-            <p class="site-slogan hidden sm:block">طراحی و اشتراک‌گذاری پرامپت‌های زیبا برای وبسایت یا وبلاگ شما</p>
-            <p class="site-slogan sm:hidden">طراحی و اشتراک‌گذاری پرامپت هوش مصنوعی</p>
-        </div>
-        <div class="header-right">
-            <a href="https://blog.fka.dev/blog/2025-06-18-building-a-react-hook-with-ai-a-step-by-step-guide-using-vibe-an-example-post-that-uses-prompts-chat-embed/" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="flex items-center text-xs text-dynamic-muted-foreground hover:text-dynamic-foreground transition-colors mr-3 touch-target hidden sm:inline-flex"
-               title="View example blog post using prompts.ir embed">
-                View example blog post
-            </a>
-            <button class="dark-mode-toggle touch-target" onclick="toggleDarkMode()" title="Toggle dark mode">
+    <header class="site-header flex flex-row-reverse justify-between">
+        <div class="header-right flex flex-row-reverse items-center">
+            <button class="dark-mode-toggle touch-target ml-3" onclick="toggleDarkMode()" title="تغییر حالت تاریک">
                 <svg class="mode-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 <svg class="mode-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
+            <a href="https://blog.fka.dev/blog/2025-06-18-building-a-react-hook-with-ai-a-step-by-step-guide-using-vibe-an-example-post-that-uses-prompts-chat-embed/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="flex items-center text-xs text-dynamic-muted-foreground hover:text-dynamic-foreground transition-colors ml-3 touch-target hidden sm:inline-flex"
+               title="مشاهده نمونه وبلاگ با پرامپت‌های embed">
+                مشاهده نمونه وبلاگ
+            </a>
+        </div>
+        <div class="header-left text-right">
+            <h1 class="site-title">پرامپت‌های قابل درج prompts.ir/embed</h1>
+            <p class="site-slogan hidden sm:block">طراحی و اشتراک‌گذاری پرامپت‌های زیبا برای وبسایت یا وبلاگ شما</p>
+            <p class="site-slogan sm:hidden">طراحی و اشتراک‌گذاری پرامپت هوش مصنوعی</p>
         </div>
     </header>
     
     <!-- Designer Mode -->
     <div id="designer-mode" class="designer-content flex flex-col lg:flex-row min-h-0">
-        <!-- Left Panel - Customization -->
-        <div class="designer-panel w-full lg:w-80 flex flex-col h-auto lg:h-full overflow-hidden order-2 lg:order-1 flex-shrink-0">
+        <!-- پنل سمت راست - سفارشی‌سازی -->
+        <div class="designer-panel w-full lg:w-80 flex flex-col h-auto lg:h-full overflow-hidden order-2 lg:order-1 flex-shrink-0 text-right">
             <div class="flex-1 overflow-y-auto custom-scrollbar">
                 <div class="p-3 lg:p-4 space-y-3">
                     
                     <!-- CONTENT SECTION -->
                     <div class="space-y-2">
-                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">Prompt</h3>
+                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">پرامپت</h3>
                         
                         <!-- Example Selector -->
                         <div class="space-y-1">
-                            <label class="text-xs font-medium text-dynamic-muted-foreground">Load Example</label>
+                            <label class="text-xs font-medium text-dynamic-muted-foreground">بارگذاری نمونه</label>
                             <select id="example-select" class="w-full p-2 bg-dynamic-muted border border-dynamic-border rounded text-xs focus-ring touch-target">
-                                <option value="">Choose an example...</option>
-                                <option value="vibe-coding">Vibe coding (no diff)</option>
-                                <option value="vibe-coding-diff">Vibe coding with diff</option>
-                                <option value="chatgpt">ChatGPT example</option>
-                                <option value="claude">Claude example</option>
-                                <option value="image-analysis">Image analysis</option>
-                                <option value="api-design">API design</option>
+                                <option value="">انتخاب نمونه...</option>
+                                <option value="vibe-coding">کدنویسی Vibe (بدون تفاوت)</option>
+                                <option value="vibe-coding-diff">کدنویسی Vibe با تفاوت</option>
+                                <option value="chatgpt">نمونه ChatGPT</option>
+                                <option value="claude">نمونه Claude</option>
+                                <option value="image-analysis">تحلیل تصویر</option>
+                                <option value="api-design">طراحی API</option>
                             </select>
                         </div>
                         
                         <!-- Context -->
                         <div class="space-y-1">
-                            <label class="text-xs font-medium text-dynamic-muted-foreground">Context</label>
+                            <label class="text-xs font-medium text-dynamic-muted-foreground">زمینه</label>
                             <input type="text" id="designer-context" 
                                    class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-xs focus-ring touch-target"
-                                   placeholder="file.py, @web, @codebase, #image">
+                                   placeholder="file.py، @وب، @کد، #تصویر">
                         </div>
                         
                         <!-- Prompt Text -->
                         <div class="space-y-1">
-                            <label class="text-xs font-medium text-dynamic-muted-foreground">Prompt Text</label>
+                            <label class="text-xs font-medium text-dynamic-muted-foreground">متن پرامپت</label>
                             <textarea id="designer-prompt" 
                                      class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-xs resize-none focus-ring custom-scrollbar touch-target"
                                      rows="6"
-                                     placeholder="Enter your prompt..."></textarea>
+                                     placeholder="متن پرامپت خود را وارد کنید..."></textarea>
                         </div>
                     </div>
                     
                     <!-- AI SETTINGS SECTION -->
                     <div class="space-y-2">
-                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">AI Settings</h3>
+                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">تنظیمات هوش مصنوعی</h3>
                         
                         <!-- Model & Mode Grid -->
                         <div class="grid grid-cols-2 gap-2">
                             <div class="space-y-1">
-                                <label class="text-xs font-medium text-dynamic-muted-foreground">Model</label>
+                                <label class="text-xs font-medium text-dynamic-muted-foreground">مدل</label>
                                 <select id="designer-model" class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-xs focus-ring touch-target">
                                     <option value="o3">o3</option>
                                     <option value="GPT 4.1">GPT 4.1</option>
@@ -140,7 +140,7 @@
                                        placeholder="Custom model">
                             </div>
                             <div class="space-y-1">
-                                <label class="text-xs font-medium text-dynamic-muted-foreground">Mode</label>
+                                <label class="text-xs font-medium text-dynamic-muted-foreground">حالت</label>
                                 <select id="designer-mode-select" class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-xs focus-ring touch-target">
                                     <option value="chat">Chat</option>
                                     <option value="agent">Agent</option>
@@ -154,85 +154,85 @@
                         <div class="flex gap-4">
                             <label class="flex items-center space-x-1.5 touch-target">
                                 <input type="checkbox" id="designer-thinking" class="rounded border-dynamic-border w-3.5 h-3.5">
-                                <span class="text-xs text-dynamic-muted-foreground">Thinking</span>
+                                <span class="text-xs text-dynamic-muted-foreground">تفکر</span>
                             </label>
                             <label class="flex items-center space-x-1.5 touch-target">
                                 <input type="checkbox" id="designer-max" class="rounded border-dynamic-border w-3.5 h-3.5">
-                                <span class="text-xs text-dynamic-muted-foreground">MAX mode</span>
+                                <span class="text-xs text-dynamic-muted-foreground">حالت MAX</span>
                             </label>
                         </div>
                     </div>
                     
                     <!-- APPEARANCE SECTION -->
                     <div class="space-y-2">
-                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">Appearance</h3>
+                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">ظاهر</h3>
                         
                         <!-- Theme Mode -->
                         <div class="space-y-1">
-                            <label class="text-xs font-medium text-dynamic-muted-foreground">Theme</label>
+                            <label class="text-xs font-medium text-dynamic-muted-foreground">تم</label>
                             <div class="grid grid-cols-3 gap-1">
                                 <button type="button" id="theme-light" class="theme-mode-btn px-2 py-1.5 text-xs font-medium rounded border border-dynamic-border bg-dynamic-background hover:bg-dynamic-muted transition-colors text-center touch-target">
-                                    Light
+                                    روشن
                                 </button>
                                 <button type="button" id="theme-dark" class="theme-mode-btn px-2 py-1.5 text-xs font-medium rounded border border-dynamic-border bg-dynamic-background hover:bg-dynamic-muted transition-colors text-center touch-target">
-                                    Dark
+                                    تاریک
                                 </button>
                                 <button type="button" id="theme-auto" class="theme-mode-btn px-2 py-1.5 text-xs font-medium rounded border border-dynamic-border bg-dynamic-primary text-white transition-colors text-center touch-target">
-                                    Auto
+                                    خودکار
                                 </button>
                             </div>
                         </div>
                         
                         <!-- Color Presets -->
                         <div class="space-y-1">
-                            <label class="text-xs font-medium text-dynamic-muted-foreground">Colors</label>
+                            <label class="text-xs font-medium text-dynamic-muted-foreground">رنگ‌ها</label>
                             <div class="grid grid-cols-8 gap-1">
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#6b7280" data-dark="#e5e7eb" 
                                         style="background: linear-gradient(135deg, #6b7280 50%, #e5e7eb 50%)" 
-                                        title="Minimal"></button>
+                                        title="مینیمال"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#1f2937" data-dark="#9ca3af" 
                                         style="background: linear-gradient(135deg, #1f2937 50%, #9ca3af 50%)" 
-                                        title="Dark Gray"></button>
+                                        title="خاکستری تیره"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#64748b" data-dark="#94a3b8" 
                                         style="background: linear-gradient(135deg, #64748b 50%, #94a3b8 50%)" 
-                                        title="Dimmed"></button>
+                                        title="کم‌رنگ"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#3b82f6" data-dark="#60a5fa" 
                                         style="background: linear-gradient(135deg, #3b82f6 50%, #60a5fa 50%)" 
-                                        title="Blue"></button>
+                                        title="آبی"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#10b981" data-dark="#34d399" 
                                         style="background: linear-gradient(135deg, #10b981 50%, #34d399 50%)" 
-                                        title="Green"></button>
+                                        title="سبز"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#8b5cf6" data-dark="#a78bfa" 
                                         style="background: linear-gradient(135deg, #8b5cf6 50%, #a78bfa 50%)" 
-                                        title="Purple"></button>
+                                        title="بنفش"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#f97316" data-dark="#fb923c" 
                                         style="background: linear-gradient(135deg, #f97316 50%, #fb923c 50%)" 
-                                        title="Orange"></button>
+                                        title="نارنجی"></button>
                                 <button type="button" class="color-preset w-full h-6 rounded border border-dynamic-border hover:border-dynamic-primary transition-colors touch-target" 
                                         data-light="#ec4899" data-dark="#f472b6" 
                                         style="background: linear-gradient(135deg, #ec4899 50%, #f472b6 50%)" 
-                                        title="Pink"></button>
+                                        title="صورتی"></button>
                             </div>
                         </div>
                         
                         <!-- Custom Colors -->
                         <div class="grid grid-cols-2 gap-2">
                             <div class="space-y-1">
-                                <label class="text-[10px] text-dynamic-muted-foreground">Light</label>
+                                <label class="text-[10px] text-dynamic-muted-foreground">روشن</label>
                                 <div class="flex gap-1">
                                     <input type="color" id="designer-light-color" value="#3b82f6" class="w-6 h-6 rounded border border-dynamic-border cursor-pointer touch-target">
                                     <input type="text" id="designer-light-color-text" value="#3b82f6" class="flex-1 px-1 py-1 bg-dynamic-background border border-dynamic-border rounded text-[10px] focus-ring font-mono touch-target" pattern="^#[0-9A-Fa-f]{6}$">
                                 </div>
                             </div>
                             <div class="space-y-1">
-                                <label class="text-[10px] text-dynamic-muted-foreground">Dark</label>
+                                <label class="text-[10px] text-dynamic-muted-foreground">تاریک</label>
                                 <div class="flex gap-1">
                                     <input type="color" id="designer-dark-color" value="#60a5fa" class="w-6 h-6 rounded border border-dynamic-border cursor-pointer touch-target">
                                     <input type="text" id="designer-dark-color-text" value="#60a5fa" class="flex-1 px-1 py-1 bg-dynamic-background border border-dynamic-border rounded text-[10px] focus-ring font-mono touch-target" pattern="^#[0-9A-Fa-f]{6}$">
@@ -243,29 +243,29 @@
                         <!-- Height -->
                         <div class="space-y-1">
                             <label class="text-xs font-medium text-dynamic-muted-foreground">
-                                Height: <span id="height-value" class="text-dynamic-foreground">400</span>px
+                                ارتفاع: <span id="height-value" class="text-dynamic-foreground">400</span> پیکسل
                             </label>
                             <input type="range" id="designer-height" 
                                    class="w-full h-1.5 bg-dynamic-muted rounded-lg appearance-none cursor-pointer slider"
                                    min="200" max="800" value="400" step="50">
                             <div class="flex justify-between text-[10px] text-dynamic-muted-foreground opacity-60">
-                                <span>200px</span>
-                                <span>800px</span>
+                                <span>۲۰۰ پیکسل</span>
+                                <span>۸۰۰ پیکسل</span>
                             </div>
                         </div>
                     </div>
                     
                     <!-- FEATURES SECTION -->
                     <div class="space-y-2">
-                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">Features</h3>
+                        <h3 class="text-xs font-semibold text-dynamic-foreground uppercase tracking-wider border-b border-dynamic-border pb-1">امکانات</h3>
                         
                         <!-- File Tree -->
                         <div class="space-y-1">
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-medium text-dynamic-muted-foreground">File Tree</label>
+                                <label class="text-xs font-medium text-dynamic-muted-foreground">ساختار فایل‌ها</label>
                                 <label class="flex items-center space-x-1 text-[10px]">
                                     <input type="checkbox" id="designer-show-filetree" class="rounded border-dynamic-border w-3 h-3" checked>
-                                    <span class="text-dynamic-muted-foreground">Show</span>
+                                    <span class="text-dynamic-muted-foreground">نمایش</span>
                                 </label>
                             </div>
                             <textarea id="designer-filetree" 
@@ -273,52 +273,52 @@
                                      rows="4"
                                      placeholder="index.html&#10;styles/main.css&#10;scripts/app.js&#10;components/header.vue"></textarea>
                             <p class="text-[9px] text-dynamic-muted-foreground opacity-60">
-                                One per line. Use / for folders. Add * to highlight.
+                                هر خط یک فایل. برای پوشه‌ها از / استفاده کنید. برای برجسته‌سازی * اضافه کنید.
                             </p>
                         </div>
                         
                         <!-- Diff View -->
                         <div class="space-y-1">
                             <div class="flex items-center justify-between">
-                                <label class="text-xs font-medium text-dynamic-muted-foreground">Diff View</label>
+                                <label class="text-xs font-medium text-dynamic-muted-foreground">نمایش تفاوت</label>
                                 <label class="flex items-center space-x-1 text-[10px]">
                                     <input type="checkbox" id="designer-show-diff" class="rounded border-dynamic-border w-3 h-3">
-                                    <span class="text-dynamic-muted-foreground">Show</span>
+                                    <span class="text-dynamic-muted-foreground">نمایش</span>
                                 </label>
                             </div>
                             <div id="diff-fields" class="space-y-2 hidden">
                                 <div class="grid grid-cols-2 gap-2">
                                     <div>
-                                        <label class="text-[10px] text-dynamic-muted-foreground">Filename</label>
+                                        <label class="text-[10px] text-dynamic-muted-foreground">نام فایل</label>
                                         <input type="text" id="designer-diff-filename" 
                                                class="w-full p-1.5 bg-dynamic-background border border-dynamic-border rounded text-[10px] focus-ring touch-target font-mono"
                                                placeholder="file.tsx">
                                     </div>
                                     <div>
-                                        <label class="text-[10px] text-dynamic-muted-foreground">Flash</label>
+                                        <label class="text-[10px] text-dynamic-muted-foreground">فلش</label>
                                         <select id="designer-flash-button" class="w-full p-1.5 bg-dynamic-background border border-dynamic-border rounded text-[10px] focus-ring touch-target">
-                                            <option value="none">None</option>
-                                            <option value="accept">Accept</option>
-                                            <option value="reject">Reject</option>
+                                            <option value="none">هیچکدام</option>
+                                            <option value="accept">تایید</option>
+                                            <option value="reject">رد</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-[10px] text-dynamic-muted-foreground">Old Text</label>
+                                    <label class="text-[10px] text-dynamic-muted-foreground">متن قبلی</label>
                                     <textarea id="designer-diff-old" 
                                              class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-[10px] resize-none focus-ring custom-scrollbar touch-target font-mono"
                                              rows="3"
-                                             placeholder="// Original code..."></textarea>
+                                             placeholder="// کد اصلی..."></textarea>
                                 </div>
                                 <div>
-                                    <label class="text-[10px] text-dynamic-muted-foreground">New Text</label>
+                                    <label class="text-[10px] text-dynamic-muted-foreground">متن جدید</label>
                                     <textarea id="designer-diff-new" 
                                              class="w-full p-2 bg-dynamic-background border border-dynamic-border rounded text-[10px] resize-none focus-ring custom-scrollbar touch-target font-mono"
                                              rows="3"
-                                             placeholder="// Updated code..."></textarea>
+                                             placeholder="// کد به‌روزرسانی شده..."></textarea>
                                 </div>
                                 <p class="text-[9px] text-dynamic-muted-foreground opacity-50">
-                                    Keep short for URL sharing.
+                                    کوتاه نگه دارید تا برای اشتراک‌گذاری URL مناسب باشد.
                                 </p>
                             </div>
                         </div>
@@ -326,28 +326,28 @@
                 </div>
             </div>
             
-            <!-- Generate Buttons - Fixed at bottom -->
+            <!-- دکمه‌های تولید - ثابت در پایین -->
             <div class="p-3 lg:p-4 space-y-2 border-t border-dynamic-border bg-dynamic-muted">
                 <button id="generate-embed" class="w-full bg-dynamic-primary text-white p-2.5 rounded text-xs font-medium hover:opacity-90 transition-opacity touch-target">
-                    Generate Embed Code
+                    تولید کد درج
                 </button>
                 <button id="reset-settings" class="text-[10px] text-dynamic-muted-foreground hover:text-dynamic-foreground transition-colors opacity-50 hover:opacity-100 touch-target">
-                    Reset settings
+                    بازنشانی تنظیمات
                 </button>
             </div>
         </div>
         
-        <!-- Right Panel - Preview -->
-        <div class="flex-none lg:flex-1 flex items-center justify-center px-4 pb-4 pt-0 lg:p-8 bg-dynamic-muted/20 order-1 lg:order-2 min-h-[300px] lg:min-h-0">
+        <!-- پنل سمت چپ - پیش‌نمایش -->
+        <div class="flex-none lg:flex-1 flex items-center justify-center px-4 pb-4 pt-0 lg:p-8 bg-dynamic-muted/20 order-1 lg:order-2 min-h-[300px] lg:min-h-0 text-right">
             <div class="w-full max-w-3xl">
-                <h3 class="text-center text-sm font-medium text-dynamic-muted-foreground mb-4 hidden lg:block">Preview of the embed. You can change the settings below.</h3>
+                <h3 class="text-center text-sm font-medium text-dynamic-muted-foreground mb-4 hidden lg:block">پیش‌نمایش درج. می‌توانید تنظیمات را تغییر دهید.</h3>
                 <div id="preview-wrapper" class="bg-dynamic-background border border-dynamic-border rounded-xl overflow-hidden shadow-lg h-[250px] sm:h-[300px] lg:h-[400px] mt-4 lg:mt-0">
                     <div class="h-full" id="preview-container">
-                        <!-- Preview iframe will be injected here -->
+                        <!-- پیش‌نمایش iframe اینجا قرار می‌گیرد -->
                     </div>
                 </div>
                 <div class="mt-4 space-y-1">
-                    <label class="text-[10px] text-dynamic-muted-foreground opacity-60 dark:opacity-40">Click to copy iframe code:</label>
+                    <label class="text-[10px] text-dynamic-muted-foreground opacity-60 dark:opacity-40">برای کپی کد iframe کلیک کنید:</label>
                     <div id="iframe-snippet" class="px-2 py-1 bg-dynamic-muted/30 border border-dynamic-border/50 rounded text-[10px] text-dynamic-muted-foreground font-mono cursor-pointer hover:bg-dynamic-muted/50 hover:text-dynamic-foreground transition-all overflow-hidden touch-target">
                         &lt;iframe src="..."&gt;&lt;/iframe&gt;
                     </div>
@@ -356,11 +356,11 @@
         </div>
     </div>
     
-    <!-- Embed Code Modal -->
+    <!-- مودال کد درج -->
     <div id="embed-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-        <div class="bg-dynamic-background rounded-xl p-4 lg:p-6 max-w-2xl w-full max-h-[90vh] lg:max-h-[80vh] overflow-y-auto">
+        <div class="bg-dynamic-background rounded-xl p-4 lg:p-6 max-w-2xl w-full max-h-[90vh] lg:max-h-[80vh] overflow-y-auto text-right">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-semibold text-dynamic-foreground">Embed Code</h3>
+                <h3 class="text-lg font-semibold text-dynamic-foreground">کد درج</h3>
                 <button id="close-modal" class="text-dynamic-muted-foreground hover:text-dynamic-foreground touch-target p-1">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M18 6L6 18M6 6l12 12"/>
@@ -369,21 +369,21 @@
             </div>
             <div class="space-y-4">
                 <div>
-                    <label class="text-sm font-medium text-dynamic-muted-foreground">iframe Embed Code</label>
+                    <label class="text-sm font-medium text-dynamic-muted-foreground">کد درج iframe</label>
                     <textarea id="embed-code" class="w-full p-3 bg-dynamic-muted border border-dynamic-border rounded-lg text-sm font-mono mt-2 resize-none" rows="4" readonly></textarea>
-                    <button id="copy-embed-code" class="mt-2 px-4 py-3 lg:py-2 bg-dynamic-primary text-white rounded-lg text-sm hover:opacity-90 touch-target">Copy Code</button>
+                    <button id="copy-embed-code" class="mt-2 px-4 py-3 lg:py-2 bg-dynamic-primary text-white rounded-lg text-sm hover:opacity-90 touch-target">کپی کد</button>
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-dynamic-muted-foreground">Share URL</label>
+                    <label class="text-sm font-medium text-dynamic-muted-foreground">آدرس اشتراک‌گذاری</label>
                     <textarea id="share-url" class="w-full p-3 bg-dynamic-muted border border-dynamic-border rounded-lg text-sm font-mono mt-2 resize-none" rows="2" readonly></textarea>
-                    <button id="copy-share-url" class="mt-2 px-4 py-3 lg:py-2 bg-dynamic-muted text-dynamic-foreground rounded-lg text-sm hover:bg-opacity-80 touch-target">Copy URL</button>
+                    <button id="copy-share-url" class="mt-2 px-4 py-3 lg:py-2 bg-dynamic-muted text-dynamic-foreground rounded-lg text-sm hover:bg-opacity-80 touch-target">کپی آدرس</button>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Notification -->
-    <div id="notification" class="fixed top-4 right-4 bg-dynamic-accent text-white px-4 py-2 rounded-lg font-medium opacity-0 transition-opacity z-50 pointer-events-none"></div>
+    <!-- اعلان -->
+    <div id="notification" class="fixed top-4 left-4 bg-dynamic-accent text-white px-4 py-2 rounded-lg font-medium opacity-0 transition-opacity z-50 pointer-events-none text-right"></div>
     
     <script src="{{ '/embed-script.js' | relative_url }}"></script>
 </body>
