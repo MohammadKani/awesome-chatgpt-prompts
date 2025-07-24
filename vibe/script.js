@@ -322,18 +322,18 @@ function showModal(app, prompt, contributor) {
   if (!modalOverlay) {
     // Create modal if it doesn't exist
     const modalHTML = `
-      <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-overlay" id="modalOverlay" dir="rtl">
         <div class="modal">
           <div class="modal-header">
-            <h2 class="modal-title"></h2>
-            <div class="modal-actions">
-              <button class="modal-copy-button" title="Copy prompt">
+            <h2 class="modal-title" style="text-align:right"></h2>
+            <div class="modal-actions" style="flex-direction: row-reverse;">
+              <button class="modal-copy-button" title="کپی پرامپت">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
               </button>
-              <button class="modal-close" title="Close">
+              <button class="modal-close" title="بستن">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -342,12 +342,12 @@ function showModal(app, prompt, contributor) {
             </div>
           </div>
           <div class="modal-content">
-            <div class="modal-hint">
-              Copy and paste this onto <a href="https://code.visualstudio.com/docs/copilot/overview" target="_blank">VSCode Copilot</a>, 
-              <a href="https://codeium.com/windsurf" target="_blank">Windsurf</a> or 
-              <a href="https://cursor.com" target="_blank">Cursor</a>
+            <div class="modal-hint" style="text-align:right">
+              این پرامپت را کپی کرده و در <a href="https://code.visualstudio.com/docs/copilot/overview" target="_blank">ویژوال استودیو کد کوپایلوت</a>، 
+              <a href="https://codeium.com/windsurf" target="_blank">ویندسرف</a> یا 
+              <a href="https://cursor.com" target="_blank">کرسر</a> قرار دهید.
             </div>
-            <div class="content-well">
+            <div class="content-well" style="text-align:right">
               <pre><code></code></pre>
             </div>
           </div>
@@ -361,7 +361,7 @@ function showModal(app, prompt, contributor) {
                     <polyline points="4 17 10 11 4 5"></polyline>
                     <line x1="12" y1="19" x2="20" y2="19"></line>
                 </svg>
-                Run on AI IDE
+                اجرا در محیط هوش مصنوعی
                 </button>
             </div>
           </div>
@@ -398,10 +398,10 @@ function showModal(app, prompt, contributor) {
   const modalContributor = modalOverlay.querySelector('.modal-contributor');
 
   modalTitle.textContent = app;
-  modalCode.innerHTML = prompt.replace(/\\n/g, '<br>');
+  modalCode.innerHTML = prompt.replace(/\n/g, '<br>');
   if (contributor) {
     modalContributor.href = `https://github.com/${contributor.replace('@', '')}`;
-    modalContributor.textContent = `Contributed by ${contributor}`;
+    modalContributor.textContent = `مشارکت‌کننده: ${contributor}`;
   }
 
   modalOverlay.style.display = 'block';

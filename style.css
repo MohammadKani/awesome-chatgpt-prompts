@@ -1850,6 +1850,7 @@ input:checked + .slider:before {
 .dark-mode .custom-select {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
+    color: var(--accent-color);
     border-color: #2d2d2d;
 }
 
@@ -2246,7 +2247,14 @@ input:checked + .slider:before {
 
 /* RTL */
 
-.rtl{
-direction: rtl ;
-text-align: right;
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+@media (min-width: 769px) {
+    .rtl-desktop {
+        direction: rtl;
+        text-align: right;
+    }
 }

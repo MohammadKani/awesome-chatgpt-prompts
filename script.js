@@ -694,18 +694,18 @@ document.addEventListener("keydown", (e) => {
 
 function createModal() {
   const modalHTML = `
-    <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-overlay" id="modalOverlay" dir="rtl">
     <div class="modal">
         <div class="modal-header">
-        <h2 class="modal-title"></h2>
-        <div class="modal-actions">
-            <button class="modal-copy-button" title="Copy prompt">
+        <h2 class="modal-title" style="text-align:right"></h2>
+        <div class="modal-actions" style="flex-direction: row-reverse;">
+            <button class="modal-copy-button" title="کپی پرامپت">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
             </button>
-            <button class="modal-close" title="Close">
+            <button class="modal-close" title="بستن">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -713,14 +713,14 @@ function createModal() {
             </button>
         </div>
         </div>
-        <div class="modal-content"></div>
-        <div class="modal-footer">
-        <div class="modal-footer-left">
+        <div class="modal-content" style="text-align:right"></div>
+        <div class="modal-footer" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;">
+          <div class="modal-footer-left" style="flex: 1 1 auto; min-width: 120px;">
             <a class="modal-contributor" target="_blank" rel="noopener"></a>
-        </div>
-        <div class="modal-footer-right">
-            <button class="modal-embed-button" onclick="openEmbedDesigner()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          </div>
+          <div class="modal-footer-right" style="display: flex; gap: 8px; flex: 0 0 auto;">
+            <button class="modal-embed-button" onclick="openEmbedDesigner()" style="padding: 8px 18px; border-radius: 8px; background: #22c55e; color: #fff; font-weight: 500; border: none; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(34,197,94,0.08); transition: background 0.2s;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
                 <rect x="4" y="4" width="16" height="16" rx="2"></rect>
                 <rect x="9" y="9" width="6" height="6"></rect>
                 <path d="M15 2v2"></path>
@@ -731,20 +731,20 @@ function createModal() {
                 <path d="M20 9h2"></path>
                 <path d="M9 2v2"></path>
                 <path d="M9 20v2"></path>
-            </svg>
-            Embed
+              </svg>
+              جاسازی
             </button>
-            <button class="modal-chat-button" onclick="openModalChat()">
-            <svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button class="modal-chat-button" onclick="openModalChat()" style="padding: 8px 18px; border-radius: 8px; background: #10b981; color: #fff; font-weight: 500; border: none; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(16,185,129,0.08); transition: background 0.2s;">
+              <svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <svg class="terminal-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </svg>
+              <svg class="terminal-icon" style="display: none; width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="4 17 10 11 4 5"></polyline>
                 <line x1="12" y1="19" x2="20" y2="19"></line>
-            </svg>
-            Start Chat
+              </svg>
+              شروع گفتگو
             </button>
-        </div>
+          </div>
         </div>
     </div>
     </div>
