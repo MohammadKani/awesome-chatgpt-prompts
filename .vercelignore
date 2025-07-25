@@ -1,0 +1,15 @@
+# Ignore files and folders not needed for deployment
+Dockerfile
+Gemfile
+Gemfile.lock
+build.sh
+run.sh
+scripts/
+_layouts/
+vibe/
+_site/
+README.md
+CONTRIBUTING.md
+DEPLOYMENT.md
+LICENSE
+CNAME
