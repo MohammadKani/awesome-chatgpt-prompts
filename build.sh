@@ -6,4 +6,4 @@ export LC_ALL=en_US.UTF-8
 
 gem install jekyll bundler
 bundle install
-bundle exec jekyll build
+bundle exec jekyll build --trace
