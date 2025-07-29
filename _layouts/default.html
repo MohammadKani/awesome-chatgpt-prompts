@@ -114,7 +114,7 @@
           <div class="main-content-header">
             <div class="header-content">
               <div class="platform-selectors">
-                پاسخ به زبان <select id="languageSelect" class="custom-select">
+                پاسخ به <select id="languageSelect" class="custom-select">
                   <option value="Persian">فارسی</option>
                   <option value="English">انگلیسی</option>
                   <option value="Spanish">اسپانیایی</option>
@@ -130,7 +130,7 @@
                   <option value="custom">سفارشی...</option>
                 </select>
                 <input type="text" id="customLanguage" class="custom-input" placeholder="زبان..." style="display: none;">
-                با لحن <select id="toneSelect" class="custom-select">
+                با <select id="toneSelect" class="custom-select">
                   <option value="professional">حرفه‌ای</option>
                   <option value="casual">غیررسمی</option>
                   <option value="friendly">دوستانه</option>
@@ -149,7 +149,7 @@
                   <option value="custom">سفارشی...</option>
                 </select>
                 <input type="text" id="customTone" class="custom-input" placeholder="لحن..." style="display: none;">
-                برای <select id="audienceSelect" class="custom-select">
+                لحن، برای <select id="audienceSelect" class="custom-select">
                   <option value="everyone">همه</option>
                   <option value="developers">توسعه‌دهندگان</option>
                 </select>
@@ -228,7 +228,7 @@
         </div>
       </footer>
     </div>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
     {% if page.hide_tone_selector != true %}
     <script>
       // Initialize audience selector
@@ -252,64 +252,51 @@
               document.body.classList.remove('dev-mode');
               // Trigger filtering if needed
               if (typeof filterPrompts === 'function') {
-    <style>
-      video { max-width: 100% !important; }
-      body, .layout-wrapper, .site-header, .content-wrapper, .sidebar, .main-content, .site-footer {
-        direction: rtl !important;
-        text-align: right !important;
-      }
-      .header-right {
-        text-align: left !important;
-      }
-      .main-content-header, .container-lg, .markdown-body {
-        text-align: right !important;
-      }
-      .platform-pills, .platform-selectors {
-        flex-direction: row-reverse !important;
-      }
-      .modal-embed-button {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 16px;
-        background-color: var(--accent-color);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        margin-left: 8px;
-        margin-right: 0;
-      }
-      .modal-embed-button:hover {
-        background-color: var(--accent-color-hover);
-        transform: translateY(-1px);
-      }
-      .modal-embed-button svg {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-      /* Responsive adjustments for modal buttons */
-      @media (max-width: 640px) {
-        .modal-footer-right {
-          flex-direction: column-reverse;
-          gap: 8px;
-        }
-        .modal-embed-button {
-          margin-left: 0;
-          margin-bottom: 0;
-          width: 100%;
-          justify-content: center;
-        }
-        .modal-chat-button {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-    </style>
+                filterPrompts();
+              }
+            }
+          });
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.platform-tag-container')) {
+            grokDropdown.style.display = 'none';
+            isGrokDropdownVisible = false;
+          }
+        });
+
+        // Toggle dropdown
+        grokButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          isGrokDropdownVisible = !isGrokDropdownVisible;
+          grokDropdown.style.display = isGrokDropdownVisible ? 'block' : 'none';
+        });
+
+        // Handle option selection
+        grokOptions.forEach(option => {
+          option.addEventListener('click', (e) => {
+            const selectedUrl = option.dataset.url;
+            const selectedText = option.textContent;
+            grokButton.dataset.url = selectedUrl;
+            grokButton.textContent = selectedText;
+            grokDropdown.style.display = 'none';
+            isGrokDropdownVisible = false;
+            
+            // Also set audience to "everyone" for Grok options
+            audienceSelect.value = 'everyone';
+            document.body.classList.remove('dev-mode');
+            // Trigger filtering if needed
+            if (typeof filterPrompts === 'function') {
+              filterPrompts();
+            }
+          });
+        });
+      });
+      
+      // Set initial state based on URL params or default
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialAudience = urlParams.get('audience') || 'everyone';
       audienceSelect.value = initialAudience;
       document.body.classList.toggle('dev-mode', initialAudience === 'developers');
       
@@ -374,14 +361,6 @@
         }
       }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSNHFWTE77"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MSNHFWTE77');
-    </script>
+   
   </body>
 </html>
