@@ -283,7 +283,7 @@ function parseCSV(csv) {
       headers.forEach((header, index) => {
         let value = values[index] ? values[index].replace(/"/g, "").trim() : "";
         // Remove backticks from the act/title
-        if (header === "act") {
+        if (header === "به عنوان") {
           value = value.replace(/`/g, "");
         }
         // Convert 'TRUE'/'FALSE' strings to boolean for for_devs
@@ -496,10 +496,10 @@ function createPromptCards() {
         <line x1="12" y1="8" x2="12" y2="16"></line>
         <line x1="8" y1="12" x2="16" y2="12"></line>
         </svg>
-        Add Your Prompt
+        دستورالعمل خود را اضافه کنید
     </div>
     <p class="prompt-content" style="flex-grow: 1;">
-        Share your creative prompts with the community! Submit a pull request to add your prompts to the collection.
+        با اشتراک گذاری پرامپت های خلاقانه خود با جامعه، به جمع آوری این مجموعه کمک کنید! یک درخواست کشش ارسال کنید تا پرامپت های خود را به این مجموعه اضافه کنید.
     </p>
     <span class="contributor-badge">Contribute Now</span>
     </a>
@@ -514,7 +514,7 @@ function createPromptCards() {
       const isDevMode = document.getElementById("audienceSelect").value === "developers";
 
       const promptElements = document.querySelectorAll(
-        "h2[id^=act] + p + blockquote"
+        "h2[id^=به-عنوان] + p + blockquote"
       );
 
       promptElements.forEach((blockquote) => {
@@ -1283,7 +1283,7 @@ function showYamlModal(event, title, content) {
   const createYamlButton = modalOverlay.querySelector(".create-yaml-button");
   
   // Create the YAML content
-  const cleanTitle = decodeURIComponent(title).trim().replace(/^Act as a?n?\s*/ig, '');
+  const cleanTitle = decodeURIComponent(title).trim().replace(/^به عنوان یک?n?\s*/ig, '');
   const cleanContent = decodeURIComponent(content).trim().replace(/\n+/g, ' ');
   
   // Convert variables from ${Variable: Default} format to {{Variable}} format

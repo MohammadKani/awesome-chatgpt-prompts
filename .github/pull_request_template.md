@@ -15,6 +15,6 @@ the end of the contribution line.
   - [ ] Escaped quotes by double-quoting them
   - [ ] No spaces after commas after double quotes. e.g. `"Hello","hi"`, not
         `"Hello", "hi"`
-  - [ ] Removed "Act as" from the title on CSV
+  - [ ] Removed "به عنوان" from the title on CSV
 
 Please make sure you've completed all the checklist.

@@ -138,8 +138,8 @@ jobs:
                 // Helper function to normalize prompt titles
                 const normalizeTitle = (title) => {
                   title = title.trim();
-                  // Remove "Act as" or "Act as a" or "Act as an" from start if present
-                  title = title.replace(/^Act as (?:a |an )?/i, '');
+                  // Remove "به عنوان" or "به عنوان يک" or "به عنوان يک" from start if present
+                  title = title.replace(/^به عنوان (?:a |an )?/i, '');
 
                   // Capitalize each word except common articles and prepositions
                   const lowercaseWords = ['a', 'an', 'the', 'and', 'but', 'or', 'for', 'nor', 'on', 'at', 'to', 'for', 'with', 'in'];
@@ -151,8 +151,8 @@ jobs:
                     return word;
                   }).join(' ');
 
-                  // Add "Act as" prefix
-                  return `Act as ${capitalized}`;
+                  // Add "به عنوان" prefix
+                  return `به عنوان ${capitalized}`;
                 };
 
                 // First try to find prompts in README
@@ -167,7 +167,7 @@ jobs:
                       .join('\n');
 
                     console.log('Attempting to extract prompts from README changes...');
-                    const promptMatches = [...addedLines.matchAll(/## (?:Act as (?:a |an )?)?([^\n]+)\n(?:Contributed by:[^\n]*\n)?(?:> )?([^#]+?)(?=\n##|\n\n##|$)/ig)];
+                    const promptMatches = [...addedLines.matchAll(/## (?:به عنوان (?:a |an )?)?([^\n]+)\n(?:Contributed by:[^\n]*\n)?(?:> )?([^#]+?)(?=\n##|\n\n##|$)/ig)];
 
                     for (const match of promptMatches) {
                       const actName = normalizeTitle(match[1]);
@@ -277,7 +277,7 @@ jobs:
                   }
 
                   // Add to CSV content
-                  csvContent += `"${actName.replace(/^Act as an?/i, '').replace(/"/g, '""')}","${csvPrompt.replace(/"/g, '""')}"\n`;
+                  csvContent += `"${actName.replace(/^به عنوان يک?/i, '').replace(/"/g, '""')}","${csvPrompt.replace(/"/g, '""')}"\n`;
                 }
 
                 // Create new branch
@@ -498,7 +498,7 @@ jobs:
                 messages: [
                   {
                     role: "system",
-                    content: "You are a helpful assistant that generates clear and concise pull request titles. Follow these rules:\n1. Use conventional commit style (feat:, fix:, docs:, etc.)\n2. Focus on WHAT changed, not HOW or WHERE\n3. Keep it short and meaningful\n4. Don't mention file names or technical implementation details\n5. Return ONLY the new title, nothing else\n\nGood examples:\n- feat: Add \"Act as a Career Coach\"\n- fix: Correct typo in Linux Terminal prompt\n- docs: Update installation instructions\n- refactor: Improve error handling"
+                    content: "You are a helpful assistant that generates clear and concise pull request titles. Follow these rules:\n1. Use conventional commit style (feat:, fix:, docs:, etc.)\n2. Focus on WHAT changed, not HOW or WHERE\n3. Keep it short and meaningful\n4. Don't mention file names or technical implementation details\n5. Return ONLY the new title, nothing else\n\nGood examples:\n- feat: Add \"به عنوان یک Career Coach\"\n- fix: Correct typo in Linux Terminal prompt\n- docs: Update installation instructions\n- refactor: Improve error handling"
                   },
                   {
                     role: "user",
